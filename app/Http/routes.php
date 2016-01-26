@@ -25,13 +25,13 @@
 | kernel and includes session state, CSRF protection, and more.
 |
 */
+// Route::resource('admin', 'ApplicantsController');
 
 Route::group(['middleware' => ['web']], function () {
     //
 });
 
 
-// Route::resource('apply', 'ApplicantsController');
 Route::get('apply', 'ApplicantsController@apply');
 Route::post('apply', 'ApplicantsController@store');
 Route::get('apply/thankyou', 'ApplicantsController@thankyou');

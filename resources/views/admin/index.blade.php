@@ -5,7 +5,7 @@
 <table class="table table-striped table-bordered table-hover">
 	<thead>
 		<tr>
-			<th>id</th>
+			
 			<th>Full Name</th>
 			<th>Position</th>
 			<th>Email</th>
@@ -20,7 +20,7 @@
 	<tbody>
 		@foreach ($applicants as $applicant)
 			<tr>
-		<td>{{ $applicant->id }}</td>	
+	
 		<td>{{ $applicant->fullname }}</td>
 		<td>{{ $applicant->position }}</td>
 		<td>{{ $applicant->email }}</td>
@@ -28,8 +28,8 @@
 		<td>{{ $applicant->location }}</td>
 		<td>{{ $applicant->exp }}</td>
 		<td>{{ $applicant->skills }}</td>
-		<td> <a href="{{url('admin', $applicant->id)}}" class="btn btn-primary">View More</a> </td>	
-		<td> <a href="{{url('admin.edit', $applicant->id)}}" class="btn btn-warning">Edit Applicant</a> </td>	
+		<td> <a href="{{url('admin/show', $applicant->id)}}" class="btn btn-primary">View More</a> </td>	
+		<td> <a href="{{url('admin/edit', $applicant->id)}}" class="btn btn-warning">Edit Applicant</a> </td>	
 		
 		<td>
 {{-- 
