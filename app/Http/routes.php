@@ -32,5 +32,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
 // Route::resource('apply', 'ApplicantsController');
-Route::get('/apply', 'ApplicantsController@apply');
+Route::get('apply', 'ApplicantsController@apply');
+Route::post('apply', 'ApplicantsController@store');
+Route::get('apply/thankyou', 'ApplicantsController@thankyou');
 Route::get('admin', 'ApplicantsController@index');
