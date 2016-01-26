@@ -37,6 +37,6 @@ Route::post('apply', 'ApplicantsController@store');
 Route::get('apply/thankyou', 'ApplicantsController@thankyou');
 Route::get('admin', 'ApplicantsController@index');
 Route::get('admin/show/{id}', 'ApplicantsController@show');
-Route::get('admin/edit/{id}', 'ApplicantsController@edit');
-Route::post('admin/edit/', 'ApplicantsController@update');
+Route::get('admin/edit/{id}', ['as' => 'admin.edit', 'uses' => 'ApplicantsController@edit']);
+Route::put('admin/edit/{id}', 'ApplicantsController@update');
 Route::delete('admin/{id}', 'ApplicantsController@destroy');
