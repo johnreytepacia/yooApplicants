@@ -6,7 +6,6 @@ use App\Applicants;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class ApplicantsController extends Controller
 {
@@ -23,11 +22,11 @@ class ApplicantsController extends Controller
 		return view('apply.apply');
 	}
 
-	public function store()
+	public function store(Request $request)
 	{
 		$applicant = $request->all();
 		Applicants::create($applicant);
-		return redirect('apply.thankyou');
+		return redirect('apply/thankyou');
 	}
 
 	public function thankyou()
