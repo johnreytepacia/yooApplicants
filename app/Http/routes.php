@@ -36,3 +36,6 @@ Route::get('apply', 'ApplicantsController@apply');
 Route::post('apply', 'ApplicantsController@store');
 Route::get('apply/thankyou', 'ApplicantsController@thankyou');
 Route::get('admin', 'ApplicantsController@index');
+Route::get('admin/show/{id}', 'ApplicantsController@show');
+Route::post('admin/edit/{id}', 'ApplicantsController@edit');
+Route::delete('admin/{id}', 'ApplicantsController@destroy');

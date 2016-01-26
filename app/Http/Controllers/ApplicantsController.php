@@ -35,19 +35,30 @@ class ApplicantsController extends Controller
 		return view('apply.thankyou');
 	}
 
-	public function edit($id)
+	public function show($id)
 	{
-
+		$applicant = Applicants::find($id);
+        return view('admin.show', compact('applicant'));
 	}
 
-	public function update($id)
+	public function edit($id)
 	{
+		$applicant = Applicants::find($id);
+        return view('admin.edit', compact('applicant'));
+	}
 
+	public function update(Request $request, $id)
+	{
+		$appUpdate = $request->all();
+        $applicant = Applicants::find($id);
+        $applicant->update($appUpdate);
+        return redirect('admin');
 	}
 
 	public function destroy($id)
 	{
-
+		Applicants::find($id)->delete();
+        return redirect('admin');
 	}
 
 }

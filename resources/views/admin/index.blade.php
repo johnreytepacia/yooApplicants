@@ -28,15 +28,24 @@
 		<td>{{ $applicant->location }}</td>
 		<td>{{ $applicant->exp }}</td>
 		<td>{{ $applicant->skills }}</td>
-	{{-- 	<td> <a href="{{url('admin', $applicant->id)}}" class="btn btn-primary">View More</a> </td>	
-		<td> <a href="{{url('admin.edit', $applicant->id)}}" class="btn btn-warning">View More</a> </td>	
+		<td> <a href="{{url('admin', $applicant->id)}}" class="btn btn-primary">View More</a> </td>	
+		<td> <a href="{{url('admin.edit', $applicant->id)}}" class="btn btn-warning">Edit Applicant</a> </td>	
 		
-		<td>{!! Form::open(['method' => 'DELETE', 'route'=>['admin.destroy', $applicant->id]]) !!}
+		<td>
+{{-- 
+		{!! Form::open(['method' => 'DELETE', 'route'=>['admin.destroy', $applicant->id]]) !!}
              {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
              {!! Form::close() !!}
+              --}}
+				 <form action="/admin/{{ $applicant->id }}" method="POST">
+			            {{ csrf_field() }}
+			            {{ method_field('DELETE') }}
+
+			            <button class="btn btn-danger">Delete</button>
+			        </form>
              </td>
 
- --}}
+
 
 			</tr>
 
