@@ -3,7 +3,7 @@
 
 @section('content')
 
-	{!! Form::open(['url' => 'apply/thankyou']) !!}
+	{!! Form::open(['url' => 'apply']) !!}
 
 		<div class="form-group">
 			{!! Form::label('fullname', 'Full Name:') !!}
