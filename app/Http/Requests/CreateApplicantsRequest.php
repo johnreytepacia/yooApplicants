@@ -24,7 +24,7 @@ class CreateApplicantsRequest extends Request
     public function rules()
     {
         return [
-            'fullname'      =>  'requried | max:255',
+            'fullname'      =>  'required | max:255',
             'position'      =>  'required | max:255',
             'email'         =>  'required | max:255',
             'contact'       =>  'required | max:255',
