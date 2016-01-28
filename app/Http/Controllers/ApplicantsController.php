@@ -27,17 +27,6 @@ class ApplicantsController extends Controller
 	{
 		
 
-		// if(Input::file('file')->isValid())
-		// {
-		// 	$destinationPath = 'public/uploads';
-		// 	$extension = Input::file('file')->getClientOriginalExtension();
-		// 	$filename = rand(11111, 99999). ' . ' .$extension;
-		// 	Input:file('file')->move($destinationPath, $filename);
-		// 	Session::flash('success', 'Upload successfully');
-
-
-		// }
-
 		$applicant = $request->all();
 		Applicants::create($applicant);
 		return redirect('apply/thankyou');
