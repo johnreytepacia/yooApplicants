@@ -24,13 +24,13 @@ class CreateApplicantsRequest extends Request
     public function rules()
     {
         return [
-            'fullname'      =>  'requried',
-            'position'      =>  'required',
-            'email'         =>  'required',
-            'contact'       =>  'required',
+            'fullname'      =>  'requried | max:255',
+            'position'      =>  'required | max:255',
+            'email'         =>  'required | max:255',
+            'contact'       =>  'required | max:255',
             'location'      =>  'required',
             'skills'        =>  'required',
-            'file'          =>  'mimes:doc,xcs,pdf'
+            'file'          =>  'required | mimes:doc,xcs,pdf'
         ];
     }
 }
