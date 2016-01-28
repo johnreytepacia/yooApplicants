@@ -6,6 +6,7 @@ use App\Applicants;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\CreateApplicantsRequest;
 
 class ApplicantsController extends Controller
 {
@@ -22,8 +23,21 @@ class ApplicantsController extends Controller
 		return view('apply.apply');
 	}
 
-	public function store(Request $request)
+	public function store(CreateApplicantsRequest $request)
 	{
+		
+
+		// if(Input::file('file')->isValid())
+		// {
+		// 	$destinationPath = 'public/uploads';
+		// 	$extension = Input::file('file')->getClientOriginalExtension();
+		// 	$filename = rand(11111, 99999). ' . ' .$extension;
+		// 	Input:file('file')->move($destinationPath, $filename);
+		// 	Session::flash('success', 'Upload successfully');
+
+
+		// }
+
 		$applicant = $request->all();
 		Applicants::create($applicant);
 		return redirect('apply/thankyou');
