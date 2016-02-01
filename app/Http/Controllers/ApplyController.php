@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Applicants;
-use Illuminate\Http\Request;
+use App\Http\Requests\UpdateApplicantsRequest;
 
 use App\Http\Requests;
 use App\Http\Requests\CreateApplicantsRequest;
-use App\Http\Controllers\Controller;
 
 class ApplyController extends Controller
 {
@@ -27,10 +26,21 @@ class ApplyController extends Controller
 		return redirect('apply/thankyou');
 	}
 
+	public function update($id, UpdateApplicantsRequest $request) {
+		$appUpdate = $request->all();
+		$applicant = Applicants::find($id);
+		$applicant->update($appUpdate);
+		return redirect('admin');
+	}
+
+	public function destroy($id) {
+		Applicants::find($id)->delete();
+		return redirect('admin');
+	}
+
 	public function show()
 	{
 		return view('apply.thankyou');
 	}
-
 
 }

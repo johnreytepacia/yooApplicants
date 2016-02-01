@@ -3,7 +3,7 @@
 
 @section('content')
 <h1>Update Applicant</h1>
-	{!! Form::model($applicant, ['method' => 'PUT', 'route' =>['admin.edit', $applicant->id]]) !!}
+	{!! Form::model($applicant, ['method' => 'PUT', 'route' =>['apply.update', $applicant->id]]) !!}
 
 		<div class="form-group">
 			{!! Form::label('fullname', 'Full Name:') !!}

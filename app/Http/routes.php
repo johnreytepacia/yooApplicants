@@ -30,11 +30,14 @@ Route::group(['middleware' => ['web']], function () {
     //
 });
 
-Route::resource('apply', 'ApplyController',
-	['except' => ['index','edit', 'update', 'destroy']]);
+Route::resource('apply', 'ApplyController', ['except' => [ 'edit', 'create']]);
 
-Route::resource('admin', 'ApplicantsController',
-	['except' => ['create', 'store']]);
+Route::get('admin', 'AdminController@index');
+Route::get('admin/details/{id}', 'AdminController@show');
+Route::get('admin/edit/{id}', 'AdminController@edit');
+
+//Route::resource('admin', 'ApplicantsController',
+//	['except' => ['create', 'store', 'update', 'edit']]);
 
 // Route::get('apply', 'ApplicantsController@apply');
 // Route::post('apply', 'ApplicantsController@store');
@@ -43,5 +46,5 @@ Route::resource('admin', 'ApplicantsController',
 // Route::get('admin/show/{id}', 'ApplicantsController@show');
 // Route::delete('admin/{id}', 'ApplicantsController@destroy');
 
-// Route::get('admin/edit/{id}', ['as' => 'admin.edit', 'uses' => 'ApplicantsController@edit']);
-// Route::put('admin/edit/{id}', 'ApplicantsController@update');
+//Route::get('admin/edit/{id}', ['as' => 'admin.edit', 'uses' => 'ApplicantsController@edit']);
+//Route::put('admin/edit/{id}', 'ApplicantsController@update');
