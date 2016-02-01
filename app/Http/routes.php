@@ -30,8 +30,11 @@ Route::group(['middleware' => ['web']], function () {
     //
 });
 
-Route::resource('apply', 'ApplyController',
-	['except' => [ 'edit', 'create']]);
+Route::resource('apply', 'ApplyController', ['except' => [ 'edit', 'create']]);
+
+Route::get('admin', 'AdminController@index');
+Route::get('admin/details/{id}', 'AdminController@show');
+Route::get('admin/edit/{id}', 'AdminController@edit');
 
 //Route::resource('admin', 'ApplicantsController',
 //	['except' => ['create', 'store', 'update', 'edit']]);
