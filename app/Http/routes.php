@@ -33,11 +33,8 @@ Route::group(['middleware' => ['web']], function () {
 Route::resource('apply', 'ApplyController',
 	['except' => [ 'edit', 'create']]);
 
-Route::get('admin', 'ApplicantsController@index');
-Route::get('admin/edit/{id}', 'ApplicantsController@edit');
 //Route::resource('admin', 'ApplicantsController',
-//	['except' => ['create', 'store', 'update', 'edit']]
-//);
+//	['except' => ['create', 'store', 'update', 'edit']]);
 
 // Route::get('apply', 'ApplicantsController@apply');
 // Route::post('apply', 'ApplicantsController@store');
