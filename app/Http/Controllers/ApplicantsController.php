@@ -18,24 +18,6 @@ class ApplicantsController extends Controller
     	return view('admin.index', compact('applicants'));
     }
 
-	public function apply()
-	{
-		return view('apply.apply');
-	}
-
-	public function store(CreateApplicantsRequest $request)
-	{
-		
-
-		$applicant = $request->all();
-		Applicants::create($applicant);
-		return redirect('apply/thankyou');
-	}
-
-	public function thankyou()
-	{
-		return view('apply.thankyou');
-	}
 
 	public function show($id)
 	{

@@ -25,18 +25,23 @@
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-// Route::resource('admin', 'ApplicantsController');
 
 Route::group(['middleware' => ['web']], function () {
     //
 });
 
+Route::resource('apply', 'ApplyController',
+	['except' => ['index','edit', 'update', 'destroy']]);
 
-Route::get('apply', 'ApplicantsController@apply');
-Route::post('apply', 'ApplicantsController@store');
-Route::get('apply/thankyou', 'ApplicantsController@thankyou');
-Route::get('admin', 'ApplicantsController@index');
-Route::get('admin/show/{id}', 'ApplicantsController@show');
+Route::resource('admin', 'ApplicantsController',
+	['except' => ['create', 'store', 'update', 'edit']]);
+
+// Route::get('apply', 'ApplicantsController@apply');
+// Route::post('apply', 'ApplicantsController@store');
+// Route::get('apply/thankyou', 'ApplicantsController@thankyou');
+// Route::get('admin', 'ApplicantsController@index');
+// Route::get('admin/show/{id}', 'ApplicantsController@show');
+// Route::delete('admin/{id}', 'ApplicantsController@destroy');
+
 Route::get('admin/edit/{id}', ['as' => 'admin.edit', 'uses' => 'ApplicantsController@edit']);
 Route::put('admin/edit/{id}', 'ApplicantsController@update');
-Route::delete('admin/{id}', 'ApplicantsController@destroy');

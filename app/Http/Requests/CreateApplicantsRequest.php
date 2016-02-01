@@ -29,8 +29,8 @@ class CreateApplicantsRequest extends Request
             'email'         =>  'required | max:255',
             'contact'       =>  'required | max:255',
             'location'      =>  'required',
-            'skills'        =>  'required',
-            'file'          =>  'required | mimes:doc,xcs,pdf'
+            'skills'        =>  'required'
+            // 'file'          =>  'required | mimes:doc,xcs,pdf'
         ];
     }
 }
