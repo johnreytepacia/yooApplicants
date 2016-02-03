@@ -13,6 +13,8 @@ class AdminController extends Controller
         return view('admin.index', compact('applicants'));
     }
 
+
+
     public function edit($id) {
         $applicant = Applicants::find($id);
         return view('admin.edit', compact('applicant'));

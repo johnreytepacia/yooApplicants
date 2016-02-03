@@ -27,7 +27,8 @@ class UpdateApplicantsRequest extends Request
             'email'         =>  'required | max:255',
             'contact'       =>  'required | max:255',
             'location'      =>  'required',
-            'skills'        =>  'required'
+            'skills'        =>  'required',
+            'file'          =>  'required | mime:pdf'
         ];
     }
 }

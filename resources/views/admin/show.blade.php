@@ -15,3 +15,4 @@
 	<a href="{{url('admin')}}" class="btn btn-primary"> Back</a>
 
 @endsection
+

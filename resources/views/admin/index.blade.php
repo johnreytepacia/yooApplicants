@@ -26,7 +26,7 @@
 				<td>{{ $applicant->location }}</td>
 				<td>{{ $applicant->exp }}</td>
 				<td>{{ $applicant->skills }}</td>
-				<td><a href="{{url('admin/show', $applicant->id)}}" class="btn btn-primary">View More</a></td>
+				<td><a href="{{url('admin/details', $applicant->id)}}" class="btn btn-primary">View More</a></td>
 				<td><a href="{{url('admin/edit', $applicant->id)}}" class="btn btn-warning">Edit Applicant</a></td>
 				<td>
 					{!! Form::open(['method' => 'DELETE', 'route' => ['apply.destroy', $applicant->id] ]) !!}
