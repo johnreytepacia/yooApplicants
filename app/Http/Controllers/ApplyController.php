@@ -21,25 +21,11 @@ class ApplyController extends Controller
 	public function store(CreateApplicantsRequest $request)
 	{
 		
-		// $applicant = $request->all();
-		// Applicants::create($applicant);
-		// return redirect('apply/thankyou');
-
-		$applicant = new Applicants(array(
-				'fullname'	=>	$request->get('fullname'),
-				'position'	=>	$request->get('position'),
-				'email'		=>	$request->get('email'),
-				'contact'	=>	$request->get('contact'),
-				'location'	=>	$request->get('location'),
-				'skills'	=>	$request->get('skills')
-			));
-
-		$applicant->save();
-
-		$fileupload = $applicant->id . '.' . $request->file('file')->getClientOriginalExtension();
-		$request->file('file')->move(base_path() . '/public/uploads', $fileupload);
-
+		$applicant = $request->all();
+		Applicants::create($applicant);
 		return redirect('apply/thankyou');
+
+		
 
 	}
 
